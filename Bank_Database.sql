@@ -1,0 +1,46 @@
+CREATE DATABASE Bank;
+
+USE DATABASE Bank;
+
+CREATE TABLE Clientes(
+		ClienteID NUMBER NOT NULL PRIMARY KEY AUTO_INCREMENT,
+		Nombre VARCHAR2(50) NOT NULL,
+		Apellido VARCHAR2(50) NOT NULL,
+0		Número_de_cuenta(100) NUMBER NOT NULL,
+		Contraseña VARCHAR2(50) NOT NULL );
+					
+CREATE TABLE Cuentas (
+		CuentaID NUMBER PRIMARY KEY NOT NULL AUTO_INCREMENT,
+		ClienteID NUMBER REFERENCES Clientes(ClienteID),
+		Saldo NUMBER,
+		TipoCuenta VARCHAR2(20)
+);
+
+CREATE TABLE Transacciones (
+		TransaccionID NUMBER PRIMARY KEY NOT NULL AUTO_INCREMENT,
+		CuentaID NUMBER REFERENCES Cuentas(CuentaID),
+		TipoTransaccion VARCHAR2(20),
+		Monto NUMBER,
+		FechaHora TIMESTAMP
+);
+
+CREATE TABLE ConfiguracionesClientes (
+		ConfiguracionID NUMBER PRIMARY KEY NOT NULL AUTO_INCREMENT,
+		ClienteID NUMBER REFERENCES Clientes(ClienteID),
+		Autorizacion BOOLEAN,
+		LimiteDebito NUMBER
+);
+
+
+INSERT INTO Clientes VALUES(213,'pilar','pub','38749817399873','PillaPuB787'),
+(113,'lEO','chis','3874981733242424','LeoChoe423');
+
+
+INSERT INTO Cuentas VALUES(123,213,250,'CA'),
+(234,112,21322,'CC');
+
+INSERT INTO Transacciones VALUES(200,123,'DESCUNTO',250),
+(234,112,'ABONO',250);
+
+INSERT INTO ConfiguracionesClientes VALUES(500,213,TRUE,2500),
+(234,112,FALSE,500);
