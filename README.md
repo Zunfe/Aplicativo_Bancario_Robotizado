@@ -19,17 +19,9 @@ Este proyecto es una implementación de un aplicativo bancario robotizado que pe
 1. Clona este repositorio en tu máquina local.
 2. Importa el esquema de base de datos desde `Bank_Database.sql` en tu instancia de Oracle.
 3. Modifica y ajusta los procedimientos almacenados según tus necesidades.
-4. Asegúrate de configurar adecuadamente las conexiones a las API bancarias en tu código.
 
-## Contribución
 
-Si deseas contribuir a este proyecto, sigue estos pasos:
 
-1. Haz un fork del repositorio.
-2. Crea una rama para tu mejora/función: `git checkout -b feature/nueva-caracteristica`.
-3. Realiza tus cambios y realiza commits: `git commit -m 'Agrega nueva característica'`.
-4. Haz un push a la rama: `git push origin feature/nueva-caracteristica`.
-5. Crea un Pull Request en este repositorio.
 
 ## Licencia
 
